@@ -1,0 +1,11 @@
+level02.pcap => wireshark file
+
+Kali : Read the file with wirehark
+- "Incorrect login" style data
+- "Password:" string
+- Next packets containing 1 or 0 byte of data
+- Fr:
+	* un paquet qui part et qui contient 1 byte de data (un char du password). Flags : PUSH et ACK
+	* un paquet qui arrive sans data. Flags : ACK
+- Les 0x7f doivent etre lus comme des delete (ascii 127)
+- On arrive a : 'ft_waNDREL0L'

@@ -1,0 +1,4 @@
+cat /etc/passwd
+scp computer from vm
+scp computer to kali
+kali -> john passwd

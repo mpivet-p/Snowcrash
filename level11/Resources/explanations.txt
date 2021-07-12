@@ -1,0 +1,12 @@
+First I saw level11.lua permissions (SUID + SGID)
+
+Then I read the script. It was waiting for a tcp connection, listening on localhost and port 5151
+It would then try to hash the password with io.popen and compare it to a hash
+
+We can inject a shell command here `prog = io.popen("echo "..pass.." | sha1sum", "r")`
+
+`netcat localhost 5151` to connect to the socket
+and then type `; getflag > /tmp/flag`
+io.popen is executing 'echo; getflag > /tmp/flag | sha1sum'. getflag output is redirected to a file before the pipe
+
+Then we just need to `cat /tmp/flag` to get our flag :)

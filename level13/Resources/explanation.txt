@@ -1,0 +1,23 @@
+Easiest one.
+
+`./level13`
+
+`ltrace ./level13`
+
+'getuid' is called two times.
+
+`gdb -q level13`
+
+```
+   0x08048595 <main+9>:     call   0x8048380 <getuid@plt>
+B+ 0x0804859a <main+14>:	cmp    eax,0x1092
+   0x0804859f <main+19>:	je     0x80485cb <main+63>
+   ...
+   0x080485cb <main+63>:	mov    DWORD PTR [esp],0x80486ef
+   0x080485d2 <main+70>:	call   0x8048474 <ft_des>
+```
+
+We can see that if eax register == 0x1092 (4242) we jump to ft_des call
+We set a breakpoint `b *main+14` and we run without args
+`set $eax=4242` and `continue`.
+We get "your token is 2A31L79asukciNyi8uppkEuSx"

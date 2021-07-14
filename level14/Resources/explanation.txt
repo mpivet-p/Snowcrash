@@ -1,0 +1,15 @@
+This one was awesome but so satisfying
+
+`gdb -q /bin/getflag`
+
+*1h30 of tests etc.*
+
+set 3 breakpoints :
+_ 'main+72' (ptrace check)
+_ 'main+391' (idk)
+_ 'main+444' (getuid to return the right flag)
+
+Now we need to edit the registers:
+1) `set $eax=1`
+2) `set $eax=1`
+2) `set $eax=0xbc6` (3014 = uid of flag14)

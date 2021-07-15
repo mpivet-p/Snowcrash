@@ -1,0 +1,10 @@
+```
+level00@SnowCrash:~$ find / -user flag00 2>&-
+/usr/sbin/john
+level00@SnowCrash:~$ cat /usr/sbin/john
+cdiiddwpgswtgt
+```
+
+trying rot() with dcode.fr with cdiiddwpgswtgt gives us "nottoohardhere"
+
+`su flag00` with nottoohardhere and `getflag`.

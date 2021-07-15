@@ -1,0 +1,5 @@
+Here we can exploit /e modifier from the regex in level06.php
+
+With a file containing "[x {${exec(getflag)}}"
+
+We get error messages and our flag

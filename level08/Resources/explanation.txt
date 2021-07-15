@@ -1,0 +1,4 @@
+./level08 require a file to open but it doesn't work with token.
+`ltrace ./level08` we can see "strstr("token", "token")"
+We create a symlink in tmp `ln -s ~/token /tmp/tk` and run `./level08 /tmp/tk` and we get the password for flag08
+Then we run getflag and it's done
